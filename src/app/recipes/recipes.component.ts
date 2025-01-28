@@ -7,11 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-recipes',
-  standalone: true,
-  imports: [HeaderComponent, SearchPipe, FormsModule, NgxPaginationModule],
-  templateUrl: './recipes.component.html',
-  styleUrl: './recipes.component.css'
+    selector: 'app-recipes',
+    imports: [HeaderComponent, SearchPipe, FormsModule, NgxPaginationModule],
+    templateUrl: './recipes.component.html',
+    styleUrl: './recipes.component.css'
 })
 export class RecipesComponent {
   allRecipes: any = []

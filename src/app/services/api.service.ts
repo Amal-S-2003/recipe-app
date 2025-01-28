@@ -29,7 +29,7 @@ export class ApiService {
     const token = sessionStorage.getItem('token')
     if (token) {
       headers = headers.append('authorization', `Bearer ${token}`)
-      console.log(headers);
+      console.log("headers===",headers);
       
     }
     
@@ -51,13 +51,21 @@ export class ApiService {
   
   // downloadRecipeAPI
   downloadRecipeAPI(recipeId:string,reqBody:any){
-    return this.http.post(`${this.server_url}/recipe/${recipeId}/download`, reqBody.this.appendToken())
+    return this.http.post(`${this.server_url}/recipe/${recipeId}/download`, reqBody,this.appendToken())
   }
   // saveRecipeAPI
   saveRecipeAPI(recipeId:string,reqBody:any){
-    return this.http.post(`${this.server_url}/recipe/${recipeId}/save`, reqBody.this.appendToken())
+    return this.http.post(`${this.server_url}/recipe/${recipeId}/save`, reqBody,this.appendToken())
+  }
+  // getSavedRecipeAPI
+  getSavedRecipeAPI(){
+    return this.http.get(`${this.server_url}/recipe/saved-recipe`,this.appendToken())
   }
 
+  // removeSavedRecipeAPI
+  removeSavedRecipeAPI(id:string){
+    return this.http.delete(`${this.server_url}/saved-recipe/${id}/remove`,this.appendToken())
+  }
 
 }
 

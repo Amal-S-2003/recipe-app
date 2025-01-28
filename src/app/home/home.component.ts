@@ -4,11 +4,10 @@ import { RouterLink } from '@angular/router';
 import { ApiService } from '../services/api.service';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [HeaderComponent, RouterLink],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    imports: [HeaderComponent, RouterLink],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css'
 })
 export class HomeComponent {
   homeRecipes: any = []

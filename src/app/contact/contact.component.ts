@@ -4,11 +4,10 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ApiService } from '../services/api.service';
 
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [HeaderComponent,ReactiveFormsModule],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+    selector: 'app-contact',
+    imports: [HeaderComponent, ReactiveFormsModule],
+    templateUrl: './contact.component.html',
+    styleUrl: './contact.component.css'
 })
 export class ContactComponent {
   demoMail: string = "flavourfusion@gmail.com"
