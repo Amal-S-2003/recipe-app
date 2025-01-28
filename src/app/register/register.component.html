@@ -1,0 +1,57 @@
+<div class="container">
+    <div style="height: 100vh;" class="row align-items-center">
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-4">
+            <h1 class="text-center">Register</h1>
+            <p class="text-center">explore 100+ recipes in your hand...</p>
+            <div style=" width: 400px;" class="shadow border rounded p-5 mt-5">
+                <div class="mb-3 text-center">
+                    <h3>
+                        <i class="fa-solid fa-utensils fa-flip me-2 fs-2"></i>Recipe-World
+                    </h3>
+                </div>
+                <form [formGroup]="registerForm" (ngSubmit)="register()">
+                    <div class="mb-3 text-center">
+                        <input type="text" name="username" formControlName="username" placeholder="Enter Your Username"
+                            class="form-control">
+                    </div>
+                    @if (registerForm.get('username')?.errors&&registerForm.get('username')?.touched) {
+                    <div class="text-danger fw-bolder">*Invalid Username</div>
+                    }
+                    <div class="mb-3 text-center">
+                        <input type="email" name="email" formControlName="email" placeholder="Enter Your Email"
+                            class="form-control">
+                    </div>
+                    @if (registerForm.get('email')?.errors&&registerForm.get('email')?.touched) {
+                    <div class="text-danger fw-bolder">*Invalid Email</div>
+                    }
+                    <div class="mb-3 text-center">
+                        <input type="password" name="password" formControlName="password"
+                            placeholder="Enter Your Password" class="form-control">
+                    </div>
+                    @if (registerForm.get('password')?.errors&&registerForm.get('password')?.touched) {
+                    <div class="text-danger fw-bolder">*Invalid Password</div>
+                    }
+                    <div class="d-grid">
+                        <button class="btn btn-success">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-4 p-3">
+            <h1>Create Account</h1>
+            <h5>What will you get?</h5>
+            <ul>
+                <li>Different Recipes</li>
+                <li>Easy way to make Recipe</li>
+                <li>Save your Favourite Recipe</li>
+                <li>Download your Recipe</li>
+            </ul>
+        </div>
+    </div>
+</div>

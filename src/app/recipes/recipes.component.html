@@ -1,0 +1,70 @@
+<app-header></app-header>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="container">
+                <h5>Filter</h5>
+                <button class="btn mt-5">All</button><br>
+                <!-- cuisine type -->
+                <div class="dropdown">
+                    <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cusine Type </button>
+                    <ul class="dropdown-menu">
+                        <button class="btn" (click)="filterRecipes('cuisine','Italian')">Italian</button>
+                        <button class="btn" (click)="filterRecipes('cuisine','Asia')">Asia</button>
+                        <button class="btn" (click)="filterRecipes('cuisine','American')">American</button>
+                        <button class="btn" (click)="filterRecipes('cuisine','Mexican')">Mexican</button>
+                        <button class="btn" (click)="filterRecipes('cuisine','Indian')">Indian</button>
+                        <button class="btn" (click)="filterRecipes('cuisine','Pakistani')">Pakistani</button>
+                        <button class="btn" (click)="filterRecipes('cuisine','Japanese')">Japanese</button>
+                        <button class="btn" (click)="filterRecipes('cuisine','Thai')">Thai</button>
+                    </ul>
+                </div>
+                <!-- Meal Type -->
+                <!-- <div class="dropdown"> -->
+                <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Meal Type </button>
+                <ul class="dropdown-menu">
+                    <button class="btn" (click)="filterRecipes('mealType','Dinner')">Dinner</button>
+                    <button class="btn" (click)="filterRecipes('mealType','Lunch')">Lunch</button>
+                    <button class="btn" (click)="filterRecipes('mealType','Dessert')">Dessert</button>
+                    <button class="btn" (click)="filterRecipes('mealType','Appetizer')">Appetizer</button>
+                    <button class="btn" (click)="filterRecipes('mealType','Breakfast')">Breakfast</button>
+                    <button class="btn" (click)="filterRecipes('mealType','Beverage')">Beverage</button>
+                    <button class="btn" (click)="filterRecipes('mealType','Salad')">Salad</button>
+                </ul>
+                <!-- </div> -->
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="d-flex justify-content-between align-itms-center">
+                <h1>All Recipies</h1>
+                <input type="text" [(ngModel)]="searchKey" class="form-control w-50" placeholder="Search your recipies">
+            </div>
+            <div class="row my-3">
+                @for (recipe of allRecipes|search:searchKey | paginate: { itemsPerPage: 8, currentPage: p }; track $index) {
+                <div class="col-lg-4">
+                    <div class="p-3">
+                        <img (click)="viewRecipe(recipe._id)" width="100%" [src]="recipe.image" alt="">
+                        <div class="card-body">
+                            <h4>{{recipe.name}}</h4>
+                            <p class="fw-bolder">Cuisine: <span class="text-danger">{{recipe.cuisine}}</span></p>
+                            <p class="fw-bolder">Meal Type: <span class="text-danger">{{recipe.mealType}}</span></p>
+                        </div>
+                    </div>
+                </div>
+                }
+                @if((allRecipes|search:searchKey).length==0){
+                    <div class="text-danger fw-bolder">
+                        No Recipies Found
+                    </div>
+                }
+            </div>
+            <div class="text-center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+
+    </div>
+</div>

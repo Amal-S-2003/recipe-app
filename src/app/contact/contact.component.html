@@ -1,0 +1,89 @@
+<app-header></app-header>
+
+<div class="container">
+    <div style="height: 350px;" class="bg-success row align-items-center">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 text-center text-light">
+            <h1>contact-us</h1>
+            <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ratione saepe
+                excepturi, repellendus soluta quaerat deleniti! Recusandae, culpa expedita minima iure numquam, eveniet
+                nam saepe soluta quisquam similique, debitis vitae!Lorem Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Optio, assumenda ad placeat reprehenderit quam hic eos iusto sapiente molestiae. Vitae
+                ut natus laudantium nesciunt velit alias. Voluptate minima aliquid quae!</p>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+
+    <div class="row align-items-center my-5">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4">
+            <h2>Get In Touch</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem eum quisquam corrupti quos! Blanditiis ipsum a magnam, amet quidem nesciunt error iusto quo, sit voluptatum libero praesentium labore modi minima.</p>
+            <div class="d-flex">
+                <div style="width: 40px;height: 40px;" class="rounded-circle bg-success d-flex justify-content-center align-items-center text-light me-3">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                    <h3>Address</h3>
+                    <p class="text-secondary">X003,NewYork</p>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div style="width: 40px;height: 40px;" class="rounded-circle bg-success d-flex justify-content-center align-items-center text-light me-3">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                    <h3>Email</h3>
+                    <p class="text-secondary">{{demoMail}}</p>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div style="width: 40px;height: 40px;" class="rounded-circle bg-success d-flex justify-content-center align-items-center text-light me-3">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                    <h3>Phone Number</h3>
+                    <p class="text-secondary">+91 7632767696453</p>
+                </div>
+            </div>
+            <hr>
+            <h2>Follow Us On</h2>
+            <div class="d-flex mt-4">
+                <div style="width: 40px;height: 40px;" class="rounded-circle bg-success d-flex justify-content-center align-items-center text-light me-3">
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+                <div style="width: 40px;height: 40px;" class="rounded-circle bg-success d-flex justify-content-center align-items-center text-light me-3">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div style="width: 40px;height: 40px;" class="rounded-circle bg-success d-flex justify-content-center align-items-center text-light me-3">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div style="width: 40px;height: 40px;" class="rounded-circle bg-success d-flex justify-content-center align-items-center text-light me-3">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+            <form [formGroup]="testimonyForm" (ngSubmit)="submitTestimony()" class="border shadow rounded p-5">
+                <h3>Client Testimonials</h3>
+                <div class="mb-3">
+                    <input type="text" formControlName="name" class="form-control" placeholder="name">
+                </div>
+                <div class="mb-3">
+                    <input type="email" formControlName="email" class="form-control" placeholder="email">
+                </div>
+                <div class="mb-3">
+                    <textarea id="" formControlName="message" class="form-control" placeholder="message"></textarea>
+                </div>
+                <p class="text-secondary">
+                    By submitting,your agreeing the terms and conditions of our website
+                </p>
+                <div class="float-end">
+                    <button class="text-light btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
